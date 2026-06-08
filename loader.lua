@@ -48,9 +48,8 @@ _G.PROXY_URL = Config.PROXY_URL
 
 print("[ED] Loading game:", GameKey)
 
--- Load base game script
 local BaseUrl = Config.PROXY_URL:gsub("/apis/proxy/$", "")
-local ScriptUrl = BaseUrl .. "/scripts/" .. GameKey .. ".lua"
+local ScriptUrl = "https://raw.githubusercontent.com/outhackernuls090-hash/eternal/refs/heads/main/" .. GameKey .. ".lua"
 
 local Success, Result = pcall(function()
     return game:HttpGet(ScriptUrl, true)
