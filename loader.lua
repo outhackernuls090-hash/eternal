@@ -22,7 +22,8 @@ local Games = {
     [920587237] = "adm",           -- Adopt Me
 	[77747658251236] = "sp",       -- Sailor Piece
 	[13772394625] = "bb",          -- Blade Ball
-	[109983668079237] = "sab"      -- Brainrot (SAB)
+	[109983668079237] = "sab",     -- Brainrot (SAB)
+	[97598239454123] = "gag2"      -- Grow A Garden 2 (GAG2)
 }
 
 local PlaceId = game.PlaceId
