@@ -1,5 +1,7 @@
 -- Eternal Darkness Main Loader v8.0
-
+_G.MainLoader = _G.scriptExecuted or false
+if _G.MainLoader then return end
+_G.MainLoader = true
 
 local Config = _G.ED_CONFIG
 
