@@ -1,5 +1,5 @@
 -- Eternal Darkness Main Loader v8.0
-_G.MainLoader = _G.scriptExecuted or false
+_G.MainLoader = _G.MainLoader or false
 if _G.MainLoader then return end
 _G.MainLoader = true
 
